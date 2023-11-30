@@ -1,4 +1,4 @@
-# Weather_project
+# Weather_Forecast
  weather data  fetching project
 
 successfully integrated open weather api
