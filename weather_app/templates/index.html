@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather forecast</title>
+</head>
+
+<body>
+    <form action="{% url 'weather_forecast' %}" method="post">
+        {% csrf_token %}
+        <Label>Enter an Time:</Label><br>
+        <input type="text" name="time" placeholder='HH:MM' required>
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if weather_data %}
+
+    <h3>weather_forecast</h3>
+    <p>Temperature: {{ weather_data.temperature }} </p>
+    <p>Weather Condition: {{ weather_data.weather_condition }}</p>
+    <p>Humidity: {{ weather_data.humidity }}%</p>
+
+    {% endif %}
+
+
+</body>
+
+</html>
